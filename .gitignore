@@ -1,0 +1,4 @@
+*.swp
+libraries/
+themes/contrib
+modules/contrib

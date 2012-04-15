@@ -62,8 +62,22 @@ function openblog_install() {
   $full_html_format = (object) $full_html_format;
   filter_format_save($full_html_format);
 
+  // Setup themes
+  $enabled = array(
+    'theme_default' => 'openblog',
+    'admin_theme' => 'seven',
+  );
+  theme_enable($enabled);
+
+  foreach ($enabled as $var => $theme) {
+    if (!is_numeric($var)) {
+      variable_set($var, $theme);
+    }
+  }
+  theme_disable(array('bartik'));
+
   // Enable some standard blocks.
-  $default_theme = variable_get('theme_default', 'bartik');
+  $default_theme = variable_get('theme_default', 'openblog');
   $admin_theme = 'seven';
   $values = array(
     array(
