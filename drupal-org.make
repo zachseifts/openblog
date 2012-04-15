@@ -28,12 +28,15 @@ projects[auto_nodetitle][subdir] = "contrib"
 projects[email][subdir] = "contrib"
 projects[link][subdir] = "contrib"
 projects[references][subdir] = "contrib"
+projects[codefilter][subdir] = "contrib"
+projects[gist_filter][subdir] = "contrib"
 
 ; Editor
 projects[imce][subdir] = "contrib"
 projects[imce_mkdir][subdir] = "contrib"
 projects[wysiwyg][subdir] = "contrib"
 projects[imce_wysiwyg][subdir] = "contrib"
+projects[markdown][subdir] = "contrib"
 
 libraries[tinymce][download][type] = "get"
 libraries[tinymce][download][url] = "https://github.com/downloads/tinymce/tinymce/tinymce_3.4.8.zip"

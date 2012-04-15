@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ */
+
+/**
+ * Tests for the OpenBlog Content feature.
+ *
+ */
+class OpenBlogContentTestCase extends DrupalWebTestCase {
+  protected $privileged_user;
+
+  public static function getInfo() {
+    return array(
+      'name' => 'OpenBlog Content',
+      'description' => 'Tests the Post content-type in the OpenBlog Content feature.',
+      'group' => 'OpenBlog',
+    );
+  }
+
+  public function setUp() {
+    parent::setUp('features', 'node', 'text', 'openblog_content');
+    $this->privileged_user = $this->drupalCreateUser(array());
+    $this->drupalLogin($this->privileged_user);
+  }
+
+  // Create a simpletest_example node using the node form
+  public function testOpenBlogContentPostCreate() {
+    // Create node to edit.
+    $edit = array();
+    $edit['title'] = $this->randomName(8);
+    $edit["body[und][0][value]"] = $this->randomName(16);
+    $this->drupalPost('node/add/post', $edit, t('Save'));
+    $this->assertText(t('Post @title has been created.', array('@title' => $edit['title'])));
+  }
+}
+

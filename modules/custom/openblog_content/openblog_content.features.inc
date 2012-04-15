@@ -1,0 +1,29 @@
+<?php
+/**
+ * @file
+ * openblog_content.features.inc
+ */
+
+/**
+ * Implements hook_views_api().
+ */
+function openblog_content_views_api() {
+  return array("version" => "3.0");
+}
+
+/**
+ * Implements hook_node_info().
+ */
+function openblog_content_node_info() {
+  $items = array(
+    'post' => array(
+      'name' => t('Post'),
+      'base' => 'node_content',
+      'description' => t('A blog post'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+  );
+  return $items;
+}

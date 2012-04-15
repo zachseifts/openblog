@@ -7,10 +7,33 @@
  */
 function openblog_install() {
   // Add text formats.
+  $markdown_format = array(
+    'format' => 'markdown',
+    'name' => 'Markdown',
+    'weight' => 0,
+    'filters' => array(
+      // Line break filter.
+      'filter_markdown' => array(
+        'weight' => 0,
+        'status' => 1,
+      ),
+      'codefilter' => array(
+        'weight' => 1,
+        'status' => 1,
+      ),
+      'gist_filter' => array(
+        'weight' => 2,
+        'status' => 1,
+      ),
+    ),
+  );
+  $markdown_format = (object) $markdown_format;
+  filter_format_save($markdown_format);
+
   $filtered_html_format = array(
     'format' => 'filtered_html',
     'name' => 'Filtered HTML',
-    'weight' => 0,
+    'weight' => 1,
     'filters' => array(
       // URL filter.
       'filter_url' => array(
@@ -40,7 +63,7 @@ function openblog_install() {
   $full_html_format = array(
     'format' => 'full_html',
     'name' => 'Full HTML',
-    'weight' => 1,
+    'weight' => 2,
     'filters' => array(
       // URL filter.
       'filter_url' => array(
@@ -127,44 +150,6 @@ function openblog_install() {
   }
   $query->execute();
 
-  // Insert default pre-defined node types into the database. For a complete
-  // list of available node type attributes, refer to the node type API
-  // documentation at: http://api.drupal.org/api/HEAD/function/hook_node_info.
-  $types = array(
-    array(
-      'type' => 'page',
-      'name' => st('Basic page'),
-      'base' => 'node_content',
-      'description' => st("Use <em>basic pages</em> for your static content, such as an 'About us' page."),
-      'custom' => 1,
-      'modified' => 1,
-      'locked' => 0,
-    ),
-  );
-
-  foreach ($types as $type) {
-    $type = node_type_set_defaults($type);
-    node_type_save($type);
-    node_add_body_field($type);
-  }
-
-  // Insert default pre-defined RDF mapping into the database.
-  $rdf_mappings = array(
-    array(
-      'type' => 'node',
-      'bundle' => 'page',
-      'mapping' => array(
-        'rdftype' => array('foaf:Document'),
-      ),
-    ),
-  );
-  foreach ($rdf_mappings as $rdf_mapping) {
-    rdf_mapping_save($rdf_mapping);
-  }
-
-  // Default "Basic page" to not be promoted.
-  variable_set('node_options_page', array('status'));
-
   // Don't display date and author information for "Basic page" nodes by default.
   variable_set('node_submitted_page', FALSE);
 
@@ -173,6 +158,9 @@ function openblog_install() {
   variable_set('user_picture_dimensions', '1024x1024');
   variable_set('user_picture_file_size', '800');
   variable_set('user_picture_style', 'thumbnail');
+
+  // Sets the homepage
+  variable_set('site_frontpage', 'homepage');
 
   // Allow visitor account creation with administrative approval.
   variable_set('user_register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL);
