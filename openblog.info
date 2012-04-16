@@ -24,9 +24,11 @@ dependencies[] = field_ui
 dependencies[] = file
 dependencies[] = rdf
 
+dependencies[] = entity
 dependencies[] = ctools
 dependencies[] = views
 dependencies[] = features
+dependencies[] = profile2
 dependencies[] = markdown
 dependencies[] = codefilter
 dependencies[] = gist_filter
