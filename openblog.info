@@ -24,6 +24,8 @@ dependencies[] = field_ui
 dependencies[] = file
 dependencies[] = rdf
 
+dependencies[] = token
+dependencies[] = pathauto
 dependencies[] = entity
 dependencies[] = ctools
 dependencies[] = views

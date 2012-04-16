@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Install file for openblog content
+ */
+
+/**
+ * Implements hook_install();
+ */
+function openblog_content_install() {
+  variable_set('pathauto_node_post_pattern', 'posts/[node:created:custom:Y]/[node:created:custom:m]/[node:created:custom:d]/[node:title]');
+}
+
+/**
+ * Implements hook_uninstall();
+ */
+function openblog_content_uninstall() {
+  variable_del('pathauto_node_post_pattern');
+}
+
