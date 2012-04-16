@@ -21,6 +21,7 @@ projects[imce_mkdir][subdir] = "contrib"
 projects[markdown][subdir] = "contrib"
 projects[codefilter][subdir] = "contrib"
 projects[gist_filter][subdir] = "contrib"
+projects[video_filter][subdir] = "contrib"
 
 ; Themes
 projects[omega][type] = "theme"

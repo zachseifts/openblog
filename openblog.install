@@ -25,6 +25,10 @@ function openblog_install() {
         'weight' => 2,
         'status' => 1,
       ),
+      'video_filter' => array(
+        'weight' => 3,
+        'status' => 1,
+      ),
     ),
   );
   $markdown_format = (object) $markdown_format;
