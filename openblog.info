@@ -37,6 +37,7 @@ dependencies[] = gist_filter
 dependencies[] = video_filter
 
 dependencies[] = openblog_content
+dependencies[] = openblog_profile
 
 files[] = openblog.profile
 files[] = openblog.install

@@ -1,0 +1,15 @@
+name = Openblog Profile
+description = A user profile feature for openblog
+core = 7.x
+package = Features
+version = 7.x-1.0
+project = openblog_profile
+dependencies[] = entity
+dependencies[] = features
+dependencies[] = field_sql_storage
+dependencies[] = profile2
+dependencies[] = text
+features[features_api][] = api:1
+features[field][] = profile2-profile-field_profile_about
+features[field][] = profile2-profile-field_profile_name
+features[profile2_type][] = profile

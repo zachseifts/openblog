@@ -10,6 +10,7 @@
 <tr><td><b>Test Suite</b></td></tr>
 <tr><td><a href="testcases/test_correct_theme_installed">test_correct_theme_installed</a></td></tr>
 <tr><td><a href="testcases/test_markdown_filter_installed">test_markdown_filter_installed</a></td></tr>
+<tr><td><a href="testcases/test_openblog_profile">test_openblog_profile</a></td></tr>
 <tr><td><a href="testcases/test_post_blog_entry">test_post_blog_entry</a></td></tr>
 <tr><td><a href="testcases/test_vocab_saved">test_vocab_saved</a></td></tr>
 </tbody></table>
