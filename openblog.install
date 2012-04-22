@@ -122,16 +122,26 @@ function openblog_install() {
   variable_set('user_register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL);
 
   // Enable default permissions for system roles.
-  $markdown_format_permission = filter_permission_name($markdown_format);
-  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array($markdown_format_permission));
 
+  $anonymous_perms = array(
+    'access content',
+    'access user profiles',
+    'access comments',
+    'post comments',
+  );
+  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, $anonymous_perms);
+
+  $markdown_format_permission = filter_permission_name($markdown_format);
   $athenticated_perms = array(
     $markdown_format_permission,
     'access toolbar',
     'administer profiles',
     'bypass node access',
+    'skip comment approval',
+    'administer comments',
+    'access content overview',
   );
-  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, $athenticated_perms);
+  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array_merge($anonymous_perms, $athenticated_perms));
 
   // Create a default role for site administrators, with all available permissions assigned.
   $admin_role = new stdClass();
