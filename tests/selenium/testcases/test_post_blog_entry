@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost/" />
+<title>test_vocab_saved</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">test_vocab_saved</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/user</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=edit-name</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=edit-pass</td>
+	<td>password</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Add content</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=edit-title</td>
+	<td>test post title</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=edit-body-und-0-value</td>
+	<td>test post body content.<br /><br /> - This<br /> - Should<br /> - Be <br /> - A<br /> - List<br /><br />this should be another paragraph.</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=edit-field-tags-und</td>
+	<td>tag1, tag2, tag3</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=edit-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=div.messages.status</td>
+	<td>Status message Post test post title has been created.</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>id=page-title</td>
+	<td>test post title</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=p</td>
+	<td>test post body content.</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//article[@id='node-post-1']/div/div/div/div/ul/li[5]</td>
+	<td>List</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=tag1</td>
+	<td>tag1</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=tag2</td>
+	<td>tag2</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>link=tag3</td>
+	<td>tag3</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Log out</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
