@@ -1,7 +1,7 @@
 name = Openblog Profile
 description = A user profile feature for openblog
 core = 7.x
-package = Features
+package = OpenBlog
 version = 7.x-1.0
 project = openblog_profile
 dependencies[] = entity
