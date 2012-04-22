@@ -11,6 +11,11 @@
 function openblog_content_install() {
   variable_set('pathauto_node_post_pattern', 'posts/[node:created:custom:Y]/[node:created:custom:m]/[node:created:custom:d]/[node:title]');
 
+  $node_options_post = array(
+    'promote',
+  );
+  variable_set('node_options_post', $node_options_post);
+
   // Create a default vocabulary named "Tags", enabled for the 'post' content type.
   $description = st('Use tags to group posts on similar topics into categories.');
   $help = st('Enter a comma-separated list of words to describe your content.');

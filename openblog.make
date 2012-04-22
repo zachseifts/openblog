@@ -10,6 +10,7 @@ projects[profile2][subdir] = "contrib"
 projects[context][subdir] = "contrib"
 projects[views][subdir] = "contrib"
 projects[token][subdir] = "contrib"
+projects[role_delegation][subdir] = "contrib"
 
 ; Content
 projects[pathauto][subdir] = "contrib"

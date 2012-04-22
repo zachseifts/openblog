@@ -154,25 +154,30 @@ function openblog_install() {
   // and Author is for users who can post but the posts are not public.
   $roles = array(
     array(
-      'name' => 'editor',
+      'name' => 'author',
       'perms' => array(
-        'administer comments',
         'create post content',
         'delete own post content',
-        'delete any post content',
         'edit own post content',
-        'edit any post content',
         'revert revisions',
         'view own unpublished content',
         'view revisions',
       ),
     ),
     array(
-      'name' => 'author',
+      'name' => 'editor',
       'perms' => array(
+        'bypass node access',
+        'administer comments',
+        'administer nodes',
+        'administer users',
+        'assign author role',
+        'assign editor role',
         'create post content',
         'delete own post content',
+        'delete any post content',
         'edit own post content',
+        'edit any post content',
         'revert revisions',
         'view own unpublished content',
         'view revisions',

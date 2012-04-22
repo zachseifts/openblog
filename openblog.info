@@ -35,6 +35,7 @@ dependencies[] = markdown
 dependencies[] = codefilter
 dependencies[] = gist_filter
 dependencies[] = video_filter
+dependencies[] = role_delegation
 
 dependencies[] = openblog_content
 dependencies[] = openblog_profile
