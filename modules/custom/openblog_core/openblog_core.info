@@ -1,6 +1,0 @@
-name = OpenBlog Core
-description = "Core functionality for OpenBlog"
-package = "OpenBlog"
-core = 7.x
-version = 7.x-1.x
-

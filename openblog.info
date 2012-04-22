@@ -36,7 +36,6 @@ dependencies[] = codefilter
 dependencies[] = gist_filter
 dependencies[] = video_filter
 
-dependencies[] = openblog_core
 dependencies[] = openblog_content
 
 files[] = openblog.profile

@@ -10,6 +10,17 @@
  */
 function openblog_content_install() {
   variable_set('pathauto_node_post_pattern', 'posts/[node:created:custom:Y]/[node:created:custom:m]/[node:created:custom:d]/[node:title]');
+
+  // Create a default vocabulary named "Tags", enabled for the 'post' content type.
+  $description = st('Use tags to group posts on similar topics into categories.');
+  $help = st('Enter a comma-separated list of words to describe your content.');
+  $vocabulary = (object) array(
+    'name' => st('Tags'),
+    'description' => $description,
+    'machine_name' => 'post_tags',
+    'help' => $help,
+  );
+  taxonomy_vocabulary_save($vocabulary);
 }
 
 /**
