@@ -11,6 +11,7 @@ projects[context][subdir] = "contrib"
 projects[views][subdir] = "contrib"
 projects[token][subdir] = "contrib"
 projects[role_delegation][subdir] = "contrib"
+projects[sharethis][subdir] = "contrib"
 
 ; Content
 projects[pathauto][subdir] = "contrib"

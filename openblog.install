@@ -121,8 +121,23 @@ function openblog_install() {
   // Allow visitor account creation with administrative approval.
   variable_set('user_register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL);
 
-  // Enable default permissions for system roles.
+  // Settings for ShareThis
+  variable_set('sharethis_button_option', 'stbc_hcount');
+  variable_set('sharethis_location', 'content');
+  variable_set('sharethis_node_option', 'post');
+  $sharethis_option_extras = array(
+    'Google Plus One:plusone' => 'Google Plus One:plusone',
+    'Facebook Like:fblike' => 'Facebook Like:fblike',
+  );
+  variable_set('sharethis_option_extras', $sharethis_option_extras);
 
+  variable_set('sharethis_service_option', '"Tweet:twitter","Facebook:facebook","ShareThis:sharethis"');
+  variable_set('sharethis_teaser_option', 0);
+  variable_set('sharethis_twitter_suffix', '');
+  variable_set('sharethis_weight', 10);
+  variable_set('sharethis_widget_option', 'st_multi');
+
+  // Enable default permissions for system roles.
   $anonymous_perms = array(
     'access content',
     'access user profiles',
