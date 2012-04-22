@@ -11,6 +11,7 @@ projects[views][subdir] = "contrib"
 projects[token][subdir] = "contrib"
 projects[role_delegation][subdir] = "contrib"
 projects[sharethis][subdir] = "contrib"
+projects[r4032login][subdir] = "contrib"
 
 ; Content
 projects[pathauto][subdir] = "contrib"
