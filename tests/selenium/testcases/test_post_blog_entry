@@ -19,12 +19,12 @@
 <tr>
 	<td>type</td>
 	<td>id=edit-name</td>
-	<td>admin</td>
+	<td>test1</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>id=edit-pass</td>
-	<td>password</td>
+	<td>a</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>

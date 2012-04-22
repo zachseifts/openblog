@@ -5,3 +5,58 @@
  */
 
 include_once 'openblog_profile.features.inc';
+
+/**
+ * Implements hook_block_info()
+ *
+ * @return
+ * 
+ * 
+ */
+function openblog_profile_block_info() {
+  $blocks['openblog_profile_about'] = array(
+    'info' => t('About me'),
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view(
+ *
+ * @param $delta
+ * 
+ *
+ * @return
+ * 
+ * 
+ */
+function openblog_profile_block_view($delta = '') {
+  switch ($delta) {
+    case 'openblog_profile_about':
+      $block['subject'] = t('About me');
+      $block['content'] = _openblog_profile_about_content();
+      break;
+  }
+  return $block;
+}
+
+/**
+ * Generates the content for the About me block
+ *
+ * @return
+ *  html for the body of the block
+ */
+function _openblog_profile_about_content() {
+
+  $profile_query = db_select('profile', 'p')
+    ->condition('p.uid', 1, '>')
+    ->fields('p', array('pid'));
+  $result = $profile_query->execute();
+  $dom = '';
+  foreach ($result as $record) {
+    $profile = profile2_load($record->pid);
+    $dom .= $profile->field_profile_about['und']['0']['value'];
+  }
+  return $dom;
+}
+
