@@ -136,9 +136,7 @@ function openblog_install() {
     $markdown_format_permission,
     'access toolbar',
     'administer profiles',
-    'bypass node access',
     'skip comment approval',
-    'administer comments',
     'access content overview',
   );
   user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array_merge($anonymous_perms, $athenticated_perms));
@@ -151,6 +149,42 @@ function openblog_install() {
   user_role_grant_permissions($admin_role->rid, array_keys(module_invoke_all('permission')));
   // Set this as the administrator role.
   variable_set('user_admin_role', $admin_role->rid);
+
+  // Create the Editor and Author role. The Editor role is the default role for users
+  // and Author is for users who can post but the posts are not public.
+  $roles = array(
+    array(
+      'name' => 'editor',
+      'perms' => array(
+        'administer comments',
+        'create post content',
+        'delete own post content',
+        'delete any post content',
+        'edit own post content',
+        'edit any post content',
+        'revert revisions',
+        'view own unpublished content',
+        'view revisions',
+      ),
+    ),
+    array(
+      'name' => 'author',
+      'perms' => array(
+        'create post content',
+        'delete own post content',
+        'edit own post content',
+        'revert revisions',
+        'view own unpublished content',
+        'view revisions',
+      ),
+    ),
+  );
+  foreach($roles as $role) {
+    $r = new stdClass();
+    $r->name = $role['name'];
+    user_role_save($r);
+    user_role_grant_permissions($r->rid, $role['perms']);
+  }
 
   // Assign user 1 the "administrator" role.
   db_insert('users_roles')
