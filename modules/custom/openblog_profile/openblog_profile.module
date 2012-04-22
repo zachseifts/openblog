@@ -47,7 +47,7 @@ function openblog_profile_block_view($delta = '') {
  *  html for the body of the block
  */
 function _openblog_profile_about_content() {
-
+  // TODO: filter by users who have the user role.
   $profile_query = db_select('profile', 'p')
     ->condition('p.uid', 1, '>')
     ->fields('p', array('pid'));
@@ -55,7 +55,9 @@ function _openblog_profile_about_content() {
   $dom = '';
   foreach ($result as $record) {
     $profile = profile2_load($record->pid);
+    $dom .= '<p>';
     $dom .= $profile->field_profile_about['und']['0']['value'];
+    $dom .= '</p>';
   }
   return $dom;
 }
