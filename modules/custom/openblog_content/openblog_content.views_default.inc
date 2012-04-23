@@ -110,29 +110,6 @@ function openblog_content_views_default_views() {
     'trim_length' => '600',
   );
   $handler->display->display_options['fields']['body']['field_api_classes'] = 0;
-  /* Field: Content: ShareThis Link */
-  $handler->display->display_options['fields']['sharethis']['id'] = 'sharethis';
-  $handler->display->display_options['fields']['sharethis']['table'] = 'node';
-  $handler->display->display_options['fields']['sharethis']['field'] = 'sharethis';
-  $handler->display->display_options['fields']['sharethis']['label'] = '';
-  $handler->display->display_options['fields']['sharethis']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['sharethis']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['sharethis']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['sharethis']['alter']['external'] = 0;
-  $handler->display->display_options['fields']['sharethis']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['sharethis']['alter']['trim_whitespace'] = 0;
-  $handler->display->display_options['fields']['sharethis']['alter']['nl2br'] = 0;
-  $handler->display->display_options['fields']['sharethis']['alter']['word_boundary'] = 1;
-  $handler->display->display_options['fields']['sharethis']['alter']['ellipsis'] = 1;
-  $handler->display->display_options['fields']['sharethis']['alter']['more_link'] = 0;
-  $handler->display->display_options['fields']['sharethis']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['sharethis']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['sharethis']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['sharethis']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['sharethis']['element_default_classes'] = 1;
-  $handler->display->display_options['fields']['sharethis']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['sharethis']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['sharethis']['hide_alter_empty'] = 1;
   /* Sort criterion: Content: Sticky */
   $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
   $handler->display->display_options['sorts']['sticky']['table'] = 'node';
