@@ -25,6 +25,6 @@ projects[gist_filter][subdir] = "contrib"
 projects[video_filter][subdir] = "contrib"
 
 ; Themes
-projects[omega][type] = "theme"
-projects[omega][subdir] = "contrib"
+projects[boron][type] = "theme"
+projects[boron][subdir] = "contrib"
 
