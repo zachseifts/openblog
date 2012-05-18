@@ -39,7 +39,7 @@ function openblog_install() {
   theme_disable(array('bartik'));
 
   $enabled = array(
-    'theme_default' => 'openblog',
+    'theme_default' => 'subtle_simplicity',
     'admin_theme' => 'seven',
   );
   theme_enable($enabled);
@@ -49,7 +49,7 @@ function openblog_install() {
   }
 
   // Enable some standard blocks.
-  $default_theme = variable_get('theme_default', 'openblog');
+  $default_theme = variable_get('theme_default', 'subtle_simplicity');
   $admin_theme = variable_get('admin_theme', 'seven');
   $values = array(
     array(

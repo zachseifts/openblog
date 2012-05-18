@@ -28,3 +28,8 @@ projects[video_filter][subdir] = "contrib"
 projects[boron][type] = "theme"
 projects[boron][subdir] = "contrib"
 
+projects[subtle_simplicity][type] = "theme"
+projects[subtle_simplicity][subdir] = "contrib"
+projects[subtle_simplicity][download][type] = "git"
+projects[subtle_simplicity][download][url] = "git.drupal.org:project/subtle_simplicity.git"
+
