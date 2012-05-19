@@ -48,6 +48,12 @@ function openblog_install() {
     variable_set($var, $theme);
   }
 
+  // Set theme variables
+  $theme_subtle_simplicity_settings = array(
+    'toggle_logo' => 0,
+  );
+  variable_set('theme_subtle_simplicity_settings', $theme_subtle_simplicity_settings);
+
   // Enable some standard blocks.
   $default_theme = variable_get('theme_default', 'subtle_simplicity');
   $admin_theme = variable_get('admin_theme', 'seven');
