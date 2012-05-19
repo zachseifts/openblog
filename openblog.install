@@ -29,6 +29,13 @@ function openblog_install() {
       'video_filter' => array(
         'weight' => 3,
         'status' => 1,
+        'settings' => array(
+          'video_filter_width' => 400,
+          'video_filter_height' => 400,
+          'video_filter_autoplay' => 0,
+          'video_filter_related' => 1,
+          'video_filter_html5' => 1,
+        ),
       ),
     ),
   );
