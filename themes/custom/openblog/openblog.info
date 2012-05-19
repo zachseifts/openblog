@@ -1,6 +1,0 @@
-name = 'OpenBlog Theme'
-description = ''
-core = '7.x'
-engine = 'phptemplate'
-screenshot = 'screenshot.png'
-base theme = 'boron'
