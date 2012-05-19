@@ -68,7 +68,7 @@ function openblog_content_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = 1;
-  $handler->display->display_options['fields']['title']['alter']['text'] = '<h2><a href="[path]" title="[title]">[title]</a></h2>';
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<h1 class="title"><a href="[path]" title="[title]">[title]</a></h1>';
   $handler->display->display_options['fields']['title']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['title']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['title']['alter']['external'] = 0;
