@@ -40,6 +40,7 @@ dependencies[] = sharethis
 dependencies[] = r4032login
 dependencies[] = fontyourface
 dependencies[] = google_fonts_api
+dependencies[] = context
 
 dependencies[] = openblog_content
 dependencies[] = openblog_profile
