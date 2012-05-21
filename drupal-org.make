@@ -13,6 +13,8 @@ projects[role_delegation][subdir] = "contrib"
 projects[sharethis][subdir] = "contrib"
 projects[r4032login][subdir] = "contrib"
 projects[fontyourface][subdir] = "contrib"
+projects[twitter][subdir] = "contrib"
+projects[oauth][subdir] = "contrib"
 
 ; Content
 projects[pathauto][subdir] = "contrib"
@@ -31,4 +33,9 @@ projects[boron][subdir] = "contrib"
 
 projects[subtle_simplicity][type] = "theme"
 projects[subtle_simplicity][subdir] = "contrib"
+
+; Libraries
+libraries[twitter][download][type] = "git"
+libraries[twitter][download][url] = "git://github.com/juampy72/twitter-rest-php.git"
+libraries[twitter][download][revision] = "e5ab470c175ff345dd0156f5641695bff94741f5"
 
