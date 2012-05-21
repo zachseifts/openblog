@@ -15,6 +15,7 @@ projects[r4032login][subdir] = "contrib"
 projects[fontyourface][subdir] = "contrib"
 projects[twitter][subdir] = "contrib"
 projects[oauth][subdir] = "contrib"
+projects[honeypot][subdir] = "contrib"
 
 ; Content
 projects[pathauto][subdir] = "contrib"

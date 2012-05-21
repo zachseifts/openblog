@@ -213,5 +213,15 @@ function openblog_install() {
   db_insert('users_roles')
     ->fields(array('uid' => 1, 'rid' => $admin_role->rid))
     ->execute();
+
+  // Setting up honeypot
+  variable_set('honeypot_element_name', 'homepage');
+  variable_set('honeypot_form_comment_node_post_form', 1);
+  variable_set('honeypot_form_post_node_form', 0);
+  variable_set('honeypot_form_user_pass', 1);
+  variable_set('honeypot_form_user_register_form', 1);
+  variable_set('honeypot_log', 0);
+  variable_set('honeypot_protect_all_forms', 0);
+  variable_set('honeypot_time_limit', '5');
 }
 
