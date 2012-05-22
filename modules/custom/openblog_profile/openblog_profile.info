@@ -13,3 +13,4 @@ features[features_api][] = api:1
 features[field][] = profile2-profile-field_profile_about
 features[field][] = profile2-profile-field_profile_name
 features[profile2_type][] = profile
+
