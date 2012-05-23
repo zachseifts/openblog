@@ -48,7 +48,6 @@ dependencies[] = insert
 dependencies[] = filefield_sources
 
 dependencies[] = openblog_content
-dependencies[] = openblog_profile
 
 files[] = openblog.profile
 files[] = openblog.install
