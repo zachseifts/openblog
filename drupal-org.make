@@ -17,6 +17,7 @@ projects[twitter][subdir] = "contrib"
 projects[oauth][subdir] = "contrib"
 projects[honeypot][subdir] = "contrib"
 projects[insert][subdir] = "contrib"
+projects[filefield_sources][subdir] = "contrib"
 
 ; Content
 projects[pathauto][subdir] = "contrib"

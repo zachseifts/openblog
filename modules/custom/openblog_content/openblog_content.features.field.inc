@@ -152,17 +152,17 @@ function openblog_content_field_default_fields() {
         'settings' => array(
           'filefield_sources' => array(
             'filefield_sources' => array(
-              'attach' => 'attach',
-              'reference' => 0,
+              'attach' => 0,
+              'reference' => 'reference',
               'remote' => 0,
             ),
             'source_attach' => array(
               'absolute' => '0',
               'attach_mode' => 'copy',
-              'path' => 'file_attach',
+              'path' => '',
             ),
             'source_reference' => array(
-              'autocomplete' => '0',
+              'autocomplete' => '1',
             ),
           ),
           'insert' => 1,

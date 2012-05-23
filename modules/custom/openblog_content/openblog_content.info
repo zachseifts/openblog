@@ -10,6 +10,7 @@ dependencies[] = features
 dependencies[] = image
 dependencies[] = taxonomy
 dependencies[] = views
+dependencies[] = filefield_sources
 features[context][] = openblog_sitewide
 features[ctools][] = context:context:3
 features[ctools][] = views:views_default:3.0

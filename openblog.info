@@ -45,6 +45,7 @@ dependencies[] = honeypot
 dependencies[] = redirect
 dependencies[] = globalredirect
 dependencies[] = insert
+dependencies[] = filefield_sources
 
 dependencies[] = openblog_content
 dependencies[] = openblog_profile
