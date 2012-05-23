@@ -41,7 +41,7 @@ function openblog_content_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '940',
+          'width' => '800',
           'height' => '',
           'upscale' => 0,
         ),
