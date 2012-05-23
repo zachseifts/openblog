@@ -223,5 +223,11 @@ function openblog_install() {
   variable_set('honeypot_log', 0);
   variable_set('honeypot_protect_all_forms', 0);
   variable_set('honeypot_time_limit', '5');
+
+  // Setting up date/time settings
+  variable_set('date_format_long', 'l, F j, Y - g:ia');
+  variable_set('date_format_medium', 'F j, Y - g:ia');
+  variable_set('date_format_short', 'M j Y - H:i');
+
 }
 
