@@ -1,0 +1,12 @@
+.image-post-thumb-left,
+.image-post-medium-left,
+.image-post-large-left {
+  float: left;
+  margin: 10px 10px 10px 0;
+}
+.image-post-thumb-right,
+.image-post-medium-right,
+.image-post-large-right {
+  float: right;
+  margin: 10px 10px 10px 0;
+}
