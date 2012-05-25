@@ -18,6 +18,7 @@ projects[oauth][subdir] = "contrib"
 projects[honeypot][subdir] = "contrib"
 projects[insert][subdir] = "contrib"
 projects[filefield_sources][subdir] = "contrib"
+projects[google_analytics][subdir] = "contrib"
 
 ; Content
 projects[pathauto][subdir] = "contrib"
