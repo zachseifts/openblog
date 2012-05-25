@@ -29,3 +29,4 @@ features[node][] = post
 features[taxonomy][] = post_tags
 features[views_view][] = homepage
 files[] = openblog_content.test
+stylesheets[all][] = openblog_content.theme.css
