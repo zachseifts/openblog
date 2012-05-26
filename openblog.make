@@ -5,7 +5,6 @@ core = 7.12
 projects[features][subdir] = "contrib"
 projects[ctools][subdir] = "contrib"
 projects[entity][subdir] = "contrib"
-projects[entity_token][subdir] = "contrib"
 projects[profile2][subdir] = "contrib"
 projects[context][subdir] = "contrib"
 projects[views][subdir] = "contrib"
