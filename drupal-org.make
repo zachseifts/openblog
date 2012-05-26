@@ -19,6 +19,7 @@ projects[honeypot][subdir] = "contrib"
 projects[insert][subdir] = "contrib"
 projects[filefield_sources][subdir] = "contrib"
 projects[google_analytics][subdir] = "contrib"
+projects[rules][subdir] = "contrib"
 
 ; Content
 projects[pathauto][subdir] = "contrib"
@@ -37,6 +38,9 @@ projects[boron][subdir] = "contrib"
 
 projects[subtle_simplicity][type] = "theme"
 projects[subtle_simplicity][subdir] = "contrib"
+projects[subtle_simplicity][download][type] = "git"
+projects[subtle_simplicity][download][url] = "git://git.drupal.org/project/subtle_simplicity.git"
+projects[subtle_simplicity][download][branch] = "7.x-1.x"
 
 ; Libraries
 libraries[twitter][download][type] = "git"

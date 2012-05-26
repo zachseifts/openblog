@@ -11,28 +11,4 @@
   margin: 10px 0 10px 10px;
 }
 
-#content h1,
-#content h2,
-#content h3,
-#content h4,
-#content h5 {
-  margin-bottom: 10px;
-}
 
-#content pre {
-  background: #eee;
-  overflow: auto;
-  color: #000;
-  padding: 20px 15px;
-  margin-bottom: 10px;
-  margin-right: 10px;
-}
-
-#content ul {
-  padding-left: 10px;
-  margin-bottom: 1em;
-}
-
-#content ul li {
-  line-height: 150%;
-}
