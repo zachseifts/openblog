@@ -5,6 +5,7 @@ core = 7.12
 projects[features][subdir] = "contrib"
 projects[ctools][subdir] = "contrib"
 projects[entity][subdir] = "contrib"
+projects[entity_token][subdir] = "contrib"
 projects[profile2][subdir] = "contrib"
 projects[context][subdir] = "contrib"
 projects[views][subdir] = "contrib"
@@ -19,6 +20,7 @@ projects[honeypot][subdir] = "contrib"
 projects[insert][subdir] = "contrib"
 projects[filefield_sources][subdir] = "contrib"
 projects[google_analytics][subdir] = "contrib"
+projects[rules][subdir] = "contrib"
 
 ; Content
 projects[pathauto][subdir] = "contrib"
