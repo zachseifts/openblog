@@ -48,7 +48,6 @@ libraries[twitter][download][type] = "git"
 libraries[twitter][download][url] = "git://github.com/juampy72/twitter-rest-php.git"
 libraries[twitter][download][revision] = "e5ab470c175ff345dd0156f5641695bff94741f5"
 
-libraries[1140][download][type] = get
-libraries[1140][download][url] = http://download.cssgrid.net/1140_CssGrid_2.zip
-libraries[1140][directory_name] = 1140
-libraries[1140][destination] = libraries
+libraries[1140][download][type] = "get"
+libraries[1140][download][url] = "http://download.cssgrid.net/1140_CssGrid_2.zip"
+libraries[1140][directory_name] = "1140"
