@@ -1,5 +1,5 @@
 api = 2
-core = 7.12
+core = 7.14
 
 ; Contrib modules
 projects[features][subdir] = "contrib"
