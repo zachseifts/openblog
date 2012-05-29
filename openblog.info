@@ -46,6 +46,7 @@ dependencies[] = redirect
 dependencies[] = globalredirect
 dependencies[] = insert
 dependencies[] = filefield_sources
+dependencies[] = libraries
 
 dependencies[] = openblog_content
 
