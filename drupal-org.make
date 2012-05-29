@@ -20,6 +20,7 @@ projects[insert][subdir] = "contrib"
 projects[filefield_sources][subdir] = "contrib"
 projects[google_analytics][subdir] = "contrib"
 projects[rules][subdir] = "contrib"
+projects[libraries][subdir] = "contrib"
 
 ; Content
 projects[pathauto][subdir] = "contrib"
