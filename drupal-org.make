@@ -1,5 +1,5 @@
 api = 2
-core = 7.14
+core = 7.12
 
 ; Contrib modules
 projects[features][subdir] = "contrib"
@@ -13,6 +13,7 @@ projects[role_delegation][subdir] = "contrib"
 projects[sharethis][subdir] = "contrib"
 projects[r4032login][subdir] = "contrib"
 projects[fontyourface][subdir] = "contrib"
+projects[fontyourface][version] = "7.x-2.2"
 projects[twitter][subdir] = "contrib"
 projects[oauth][subdir] = "contrib"
 projects[honeypot][subdir] = "contrib"
