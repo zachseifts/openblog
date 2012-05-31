@@ -71,6 +71,9 @@ projects[video_filter][subdir] = "contrib"
 projects[views][version] = "3.3"
 projects[views][subdir] = "contrib"
 
+projects[libraries][version] = "1.0"
+projects[libraries][subdir] = "contrib"
+
 ; Themes
 projects[boron][version] = "1.3"
 projects[boron][subdir] = "contrib"
