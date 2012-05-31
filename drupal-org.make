@@ -89,10 +89,3 @@ libraries[1140_cssgrid][download][url] = "http://download.cssgrid.net/1140_CssGr
 libraries[1140_cssgrid][directory_name] = "1140_cssgrid"
 libraries[1140_cssgrid][type] = "library"
 
-; Please fill the following out. Type may be one of get, git, bzr or svn,
-; and url is the url of the download.
-libraries[twitter][download][type] = "git"
-libraries[twitter][download][url] = "git://github.com/juampy72/twitter-rest-php.git"
-libraries[twitter][directory_name] = "twitter"
-libraries[twitter][type] = "library"
-
