@@ -9,7 +9,7 @@
  *
  */
 class OpenBlogContentTestCase extends DrupalWebTestCase {
-  protected $privileged_user;
+  protected $profile = 'openblog';
 
   public static function getInfo() {
     return array(
@@ -20,19 +20,125 @@ class OpenBlogContentTestCase extends DrupalWebTestCase {
   }
 
   public function setUp() {
-    parent::setUp('features', 'node', 'text', 'openblog_content');
-    $this->privileged_user = $this->drupalCreateUser(array());
-    $this->drupalLogin($this->privileged_user);
+    parent::setUp('openblog_content');
   }
 
   // Create a simpletest_example node using the node form
   public function testOpenBlogContentPostCreate() {
+    $user = $this->drupalCreateUser(array(
+      'bypass node access',
+    ));
+    $this->drupalLogin($user);
+
+    $this->drupalGet("/");
+    $this->assertResponse(200, t('This should work'));
     // Create node to edit.
     $edit = array();
     $edit['title'] = $this->randomName(8);
     $edit["body[und][0][value]"] = $this->randomName(16);
     $this->drupalPost('node/add/post', $edit, t('Save'));
     $this->assertText(t('Post @title has been created.', array('@title' => $edit['title'])));
+  }
+
+  public function testOpenBlogAuthorPostContent() {
+    $author = $this->drupalCreateUser(array(
+      'create post content',
+      'delete own post content',
+      'edit own post content',
+      'revert revisions',
+      'view own unpublished content',
+      'view revisions',
+    ));
+    $this->drupalLogin($author);
+
+    // Create a post
+    $edit = array();
+    $edit['title'] = $this->randomName(8);
+    $edit["body[und][0][value]"] = $this->randomName(16);
+    $this->drupalPost('node/add/post', $edit, t('Save'));
+    
+    // It should have a message from drupal_set_message
+    $this->assertText(t('Post @title has been created.', array('@title' => $edit['title'])));
+
+    // Make sure it is unpublished
+    $this->drupalGet('/admin/content');
+    $this->assertText(t('not published'));
+
+    // Make sure the user can edit a post, we know that this is going to be node 1
+    $edit = array();
+    $edit['title'] = $this->randomName(8);
+    $edit["body[und][0][value]"] = $this->randomName(64);
+    $this->drupalPost('node/1/edit', $edit, t('Save'));
+
+    $this->assertText(t('Post @title has been updated.', array('@title' => $edit['title'])));
+
+    // Make sure that the post is listed on the homepage.
+    $this->drupalGet('/');
+    $this->assertNoText(t('@title', array('@title' => $edit['title'])), 'The published node does not display on the homepage.');
+
+    // Make sure the author cannot do anything with 
+    $this->drupalGet('node/add/post');
+    $this->assertNoText(t('Menu settings'), 'The text "Menu settings" appears on the Post add page.');
+    $this->assertNoText(t('Revision information'), 'The text "Revision information" appears on the Post add page.');
+    $this->assertNoText(t('URL path settings'), 'The text "URL path settings" appears on the Post add page.');
+    $this->assertNoText(t('Comment settings'), 'The text "Comment settings" appears on the Post add page.');
+    $this->assertNoText(t('Authoring information'), 'The text "Authoring information" appears on the Post add page.');
+    $this->assertNoText(t('Publishing options'), 'The text "Publishing options" appears on the Post add page.');
+  }
+
+  public function testOpenBlogEditorPostContent() {
+    $editor = $this->drupalCreateUser(array(
+      'bypass node access',
+      'administer comments',
+      'administer nodes',
+      'administer users',
+      'assign author role',
+      'assign editor role',
+      'create post content',
+      'delete own post content',
+      'delete any post content',
+      'edit own post content',
+      'edit any post content',
+      'revert revisions',
+      'view own unpublished content',
+      'view revisions',
+    ));
+    $this->drupalLogin($editor);
+
+    // Create a post
+    $edit = array();
+    $edit['title'] = $this->randomName(8);
+    $edit["body[und][0][value]"] = $this->randomName(16);
+    $this->drupalPost('node/add/post', $edit, t('Save'));
+    
+    // It should have a message from drupal_set_message
+    $this->assertText(t('Post @title has been created.', array('@title' => $edit['title'])));
+
+    // Make sure it is unpublished
+    $this->drupalGet('/admin/content');
+    $this->assertText(t('not published'));
+
+    // Make sure the user can edit a post, we know that this is going to be node 1
+    $edit = array();
+    $edit['title'] = $this->randomName(8);
+    $edit["body[und][0][value]"] = $this->randomName(64);
+    $edit["status"] = 1;
+    $this->drupalPost('node/1/edit', $edit, t('Save'));
+
+    $this->assertText(t('Post @title has been updated.', array('@title' => $edit['title'])));
+
+    // Make sure that the post is listed on the homepage.
+    $this->drupalGet('/');
+    $this->assertText(t('@title', array('@title' => $edit['title'])), 'The published node does not display on the homepage.');
+
+    // Make sure the author cannot do anything with 
+    $this->drupalGet('node/add/post');
+    $this->assertNoText(t('Menu settings'), 'The text "Menu settings" appears on the Post add page.');
+    $this->assertText(t('Revision information'), 'The text "Revision information" appears on the Post add page.');
+    $this->assertNoText(t('URL path settings'), 'The text "URL path settings" appears on the Post add page.');
+    $this->assertText(t('Comment settings'), 'The text "Comment settings" appears on the Post add page.');
+    $this->assertText(t('Authoring information'), 'The text "Authoring information" appears on the Post add page.');
+    $this->assertText(t('Publishing options'), 'The text "Publishing options" appears on the Post add page.');
   }
 }
 
