@@ -23,7 +23,87 @@ class OpenBlogContentTestCase extends DrupalWebTestCase {
     parent::setUp('openblog_content');
   }
 
-  // Create a simpletest_example node using the node form
+  public function testOpenBlogContentDefaultSettings() {
+    // TODO: Testing for the markdown filter
+    // TODO: Test default blocks
+
+    // Check variables:
+    // - Make sure the admin theme is installed
+    // - Make sure the logo is set to 0
+    // - Test user settings
+    // - Test the default homepage
+    // - Test allow visitor account creation with administrative approval.
+    // - Test settings for ShareThis
+    $tests = array(
+      'theme_default' => 'subtle_simplicity',
+      'admin_theme' => 'seven',
+      'user_pictures' => '1',
+      'user_picture_dimensions' => '1024x1024',
+      'user_picture_file_size' => '800',
+      'user_picture_style' => 'thumbnail',
+      'site_frontpage' => 'homepage',
+      'user_register' => USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL,
+      'sharethis_button_option' => 'stbc_hcount',
+      'sharethis_location' => 'content',
+      'sharethis_node_option' => 'post',
+      'sharethis_service_option' => '"Tweet:twitter","Facebook:facebook","ShareThis:sharethis"',
+      'sharethis_teaser_option' => 0,
+      'sharethis_twitter_suffix' => '',
+      'sharethis_weight' => 10,
+      'sharethis_widget_option' => 'st_multi',
+      'honeypot_element_name' => 'homepage',
+      'honeypot_form_comment_node_post_form' => 1,
+      'honeypot_form_post_node_form' => 0,
+      'honeypot_form_user_pass' => 1,
+      'honeypot_form_user_register_form' => 1,
+      'honeypot_log' => 0,
+      'honeypot_protect_all_forms' => 0,
+      'honeypot_time_limit' => '5',
+      'date_format_long' => 'l, F j, Y - g:ia',
+      'date_format_medium' => 'F j, Y - g:ia',
+      'date_format_short' => 'M j Y - H:i'
+    );
+    foreach($tests as $key => $value) {
+      $message = t('The variable "@key" is not @value', array('@key' => $key, '@value' => $value));
+      $var = variable_get($key, '');
+      $this->assertEqual($var, $value, $message);
+    }
+
+    $theme_subtle_simplicity_settings = variable_get('theme_subtle_simplicity_settings', array());
+    $toggle_logo = $theme_subtle_simplicity_settings['toggle_logo'];
+    $this->assertEqual($toggle_logo, 0, 'The variable "toggle_logo" is not 0');
+
+    $sharethis_option_extras = variable_get('sharethis_option_extras', array());
+    $google_plus = $sharethis_option_extras['Google Plus One:plusone'];
+    $this->assertEqual($google_plus, 'Google Plus One:plusone', 'The variable "sharethis_option_extras[\'Google Plus One:plusone\']" is not Google Plus One:plusone');
+
+    $facebook_like = $sharethis_option_extras['Facebook Like:fblike'];
+    $this->assertEqual($facebook_like, 'Facebook Like:fblike', 'The variable "sharethis_option_extras[\'Facebook Like:fblike\']" is not Facebook Like:fblike');
+
+    // TODO: Test permissions
+    // TODO: Test Admin role
+  }
+
+  public function testOpenBlogContentInstallSettings() {
+    $tests = array(
+      'pathauto_node_post_pattern' => 'posts/[node:created:custom:Y]/[node:created:custom:m]/[node:created:custom:d]/[node:title]',
+    );
+    foreach($tests as $key => $value) {
+      $message = t('The variable "@key" is not @value', array('@key' => $key, '@value' => $value));
+      $var = variable_get($key, '');
+      $this->assertEqual($var, $value, $message);
+    }
+
+    $node_options_post = variable_get('node_options_post', array());
+    $promote = $node_options_post[0];
+    $this->assertEqual($promote, 'promote', 'The variable "node_options_post" is not 0');
+
+    // Make sure post_tags vocabulary exists
+    $names = taxonomy_vocabulary_get_names();
+    $vocab = $names['post_tags'];
+    $this->assertNotNull($vocab, 'the vocabulary post_tags exists');
+  }
+
   public function testOpenBlogContentPostCreate() {
     $user = $this->drupalCreateUser(array(
       'bypass node access',
