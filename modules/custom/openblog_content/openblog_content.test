@@ -24,8 +24,36 @@ class OpenBlogContentTestCase extends DrupalWebTestCase {
   }
 
   public function testOpenBlogContentDefaultSettings() {
-    // TODO: Testing for the markdown filter
-    // TODO: Test default blocks
+
+    // Testing for the markdown filter
+    $md_filters_name = array(
+      'codefilter',
+      'filter_markdown',
+      'gist_filter',
+      'video_filter',
+    );
+
+    foreach ($md_filters_name as $filter) {
+      $md_query = db_select('filter', 'f');
+      $md_query->addField('f', 'status');
+      $md_query->condition('format', 'markdown');
+      $md_query->condition('name', $filter);
+      $result = $md_query->execute()->fetchObject();
+      $this->assertEqual($result->status, 1, t('The filter "@filter" has not been enabled', array('@filter', $filter)));
+    }
+
+    // Test default blocks
+    $blocks = array(
+      'system' => 'main',
+    );
+    foreach ($blocks as $module => $delta) {
+      $block_query = db_select('block', 'b');
+      $block_query->addField('b', 'status');
+      $block_query->condition('module', $module);
+      $block_query->condition('delta', $delta);
+      $result = $block_query->execute()->fetchObject();
+      $this->assertEqual($result->status, 1, t('The block "@module" "@delta" is not enabled.', array('@module' => $module, '@delta' => $delta)));
+    }
 
     // Check variables:
     // - Make sure the admin theme is installed
