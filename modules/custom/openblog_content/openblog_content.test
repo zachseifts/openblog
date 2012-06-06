@@ -109,6 +109,51 @@ class OpenBlogContentTestCase extends DrupalWebTestCase {
     $this->assertEqual($facebook_like, 'Facebook Like:fblike', 'The variable "sharethis_option_extras[\'Facebook Like:fblike\']" is not Facebook Like:fblike');
 
     // TODO: Test permissions
+    $roles = array(
+      array(
+        'name' => 'author',
+        'perms' => array(
+          'create post content',
+          'delete own post content',
+          'edit own post content',
+          'revert revisions',
+          'view own unpublished content',
+          'view revisions',
+        ),
+      ),
+      array(
+        'name' => 'editor',
+        'perms' => array(
+          'bypass node access',
+          'administer comments',
+          'administer nodes',
+          'administer users',
+          'assign author role',
+          'assign editor role',
+          'create post content',
+          'delete own post content',
+          'delete any post content',
+          'edit own post content',
+          'edit any post content',
+          'revert revisions',
+          'view own unpublished content',
+          'view revisions',
+        ),
+      ),
+    );
+
+    foreach ($roles as $role) {
+      $role_id_query = db_select('role', 'r');
+      $role_id_query->addField('r', 'name');
+      $role_id_query->addField('r', 'rid');
+      $role_id_query->condition('name', $role['name']);
+      $role_id = $role_id_query->execute()->fetchObject();
+      $this->assertEqual($role_id->name, $role['name'], t('The role name is not @role', array('@role' => $role['name'])));
+
+      // TODO: Test and make sure that the perm exists in the database.
+
+    }
+
     // TODO: Test Admin role
   }
 
