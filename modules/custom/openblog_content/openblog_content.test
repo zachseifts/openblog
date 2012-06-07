@@ -202,7 +202,7 @@ class OpenBlogContentTestCase extends DrupalWebTestCase {
       'post-thumb-right',
     );
     foreach($installed_styles as $style) {
-      $this->assertTrue(in_array($style, array_keys($styles)), t('The thumbnail image style does not exist. array_key_exists'));
+      $this->assertTrue(in_array($style, array_keys($styles)), t('The thumbnail image style does not exist.'));
     }
 
     // Make sure the views exist
