@@ -205,6 +205,10 @@ class OpenBlogContentTestCase extends DrupalWebTestCase {
       $this->assertTrue(array_key_exists($style, $styles), t('The thumbnail image style does not exist. array_key_exists'));
     }
 
+    // Make sure the views exist
+    $views = views_get_all_views();
+    $this->assertTrue(in_array('homepage', array_keys($views)), t('The homepage view does not exist.'));
+
   }
 
   public function testOpenBlogContentPostCreate() {
