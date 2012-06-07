@@ -190,7 +190,23 @@ class OpenBlogContentTestCase extends DrupalWebTestCase {
     $this->assertNotNull($vocab, 'the vocabulary post_tags exists');
 
     // TODO: Make sure views exist
-    // TODO: Make sure image styles exist
+
+    // Make sure image styles exist
+    $styles = image_styles();
+
+    $installed_styles = array(
+      'post-full',
+      'post-large-left',
+      'post-large-right',
+      'post-medium-left',
+      'post-medium-right',
+      'post-thumb-left',
+      'post-thumb-right',
+    );
+    foreach($installed_styles as $style) {
+      $this->assertTrue(array_key_exists($style, $styles), t('The thumbnail image style does not exist. array_key_exists'));
+    }
+
     // TODO: Make sure the sitewide context exists
 
   }
