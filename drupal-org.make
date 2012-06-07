@@ -73,7 +73,7 @@ projects[views][subdir] = "contrib"
 projects[boron][version] = "1.3"
 projects[boron][subdir] = "contrib"
 
-projects[subtle_simplicity][version] = "1.1"
+projects[subtle_simplicity][version] = "1.2"
 projects[subtle_simplicity][subdir] = "contrib"
 
 ; Libraries
