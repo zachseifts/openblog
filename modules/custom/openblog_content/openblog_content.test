@@ -165,10 +165,9 @@ class OpenBlogContentTestCase extends DrupalWebTestCase {
     // Test Admin role
     $admin_role_query = db_select('role', 'r');
     $admin_role_query->addField('r', 'name');
-    $admin_role_query->addField('r', 'rid');
     $admin_role_query->condition('name', 'administrator');
     $admin_role = $admin_role_query->execute()->fetchObject();
-    $this->assertEqual($admin_role, 'administrator', t('The administrator role does not exist.'));
+    $this->assertEqual($admin_role->name, 'administrator', t('The administrator role does not exist.'));
   }
 
   public function testOpenBlogContentInstallSettings() {
