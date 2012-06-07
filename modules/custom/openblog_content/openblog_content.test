@@ -190,8 +190,6 @@ class OpenBlogContentTestCase extends DrupalWebTestCase {
     $this->assertNotNull($vocab, 'the vocabulary post_tags exists');
 
     // TODO: Make sure views exist
-    // TODO: Make sure that the fields are installed
-    // TODO: Make sure Post content-type exists
     // TODO: Make sure image styles exist
     // TODO: Make sure the sitewide context exists
 
@@ -211,6 +209,15 @@ class OpenBlogContentTestCase extends DrupalWebTestCase {
     $edit["body[und][0][value]"] = $this->randomName(16);
     $this->drupalPost('node/add/post', $edit, t('Save'));
     $this->assertText(t('Post @title has been created.', array('@title' => $edit['title'])));
+
+    // Make sure that the node is unpublished by default
+    $node_query = db_select('node', 'n');
+    $node_query->addField('n', 'nid');
+    $node_query->addField('n', 'status');
+    $node_query->condition('title', $edit['title']);
+    $node = $node_query->execute()->fetchObject();
+    $this->assertEqual($node->status, 0, t('The node is published.'));
+
   }
 
   public function testOpenBlogAuthorPostContent() {
