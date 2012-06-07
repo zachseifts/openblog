@@ -108,7 +108,7 @@ class OpenBlogContentTestCase extends DrupalWebTestCase {
     $facebook_like = $sharethis_option_extras['Facebook Like:fblike'];
     $this->assertEqual($facebook_like, 'Facebook Like:fblike', 'The variable "sharethis_option_extras[\'Facebook Like:fblike\']" is not Facebook Like:fblike');
 
-    // TODO: Test permissions
+    // Test permissions
     $roles = array(
       array(
         'name' => 'author',
@@ -150,8 +150,16 @@ class OpenBlogContentTestCase extends DrupalWebTestCase {
       $role_id = $role_id_query->execute()->fetchObject();
       $this->assertEqual($role_id->name, $role['name'], t('The role name is not @role', array('@role' => $role['name'])));
 
-      // TODO: Test and make sure that the perm exists in the database.
-
+      // Test and make sure the the default permissions exist in the database
+      // and are assigned to the proper role.
+      foreach($role['perms'] as $perm) {
+        $perm_query = db_select('role_permission', 'r');
+        $perm_query->addField('r', 'permission');
+        $perm_query->condition('rid', $role_id->rid);
+        $perm_query->condition('permission', $perm);
+        $perm_result = $perm_query->execute()->fetchObject();
+        $this->assertEqual($perm_result->permission, $perm, t('The permission "@perm" is wrong.', array('@perm' => $perm)));
+      }
     }
 
     // TODO: Test Admin role
