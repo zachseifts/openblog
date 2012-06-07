@@ -187,6 +187,7 @@ class OpenBlogContentTestCase extends DrupalWebTestCase {
     // Make sure the views exist
     $views = views_get_all_views();
     $this->assertTrue(in_array('homepage', array_keys($views)), t('The homepage view does not exist.'));
+    $this->assertTrue(in_array('openblog_archive', array_keys($views)), t('The openblog_archive view does not exist.'));
   }
 
   /**

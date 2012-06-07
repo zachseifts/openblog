@@ -28,5 +28,5 @@ features[image][] = post-thumb-right
 features[node][] = post
 features[taxonomy][] = post_tags
 features[views_view][] = homepage
+features[views_view][] = openblog_archive
 files[] = openblog_content.test
-stylesheets[all][] = openblog_content.theme.css
