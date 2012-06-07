@@ -2,10 +2,11 @@
 
 /**
  * @file
+ * Tests for the OpenBlog project
  */
 
 /**
- * Tests for the OpenBlog Content feature.
+ * Tests for the install and content.
  *
  */
 class OpenBlogContentTestCase extends DrupalWebTestCase {
@@ -23,8 +24,10 @@ class OpenBlogContentTestCase extends DrupalWebTestCase {
     parent::setUp('openblog_content');
   }
 
+  /**
+   * Tests OpenBlog's default settings.
+   */
   public function testOpenBlogContentDefaultSettings() {
-
     // Testing for the markdown filter
     $md_filters_name = array(
       'codefilter',
@@ -32,7 +35,6 @@ class OpenBlogContentTestCase extends DrupalWebTestCase {
       'gist_filter',
       'video_filter',
     );
-
     foreach ($md_filters_name as $filter) {
       $md_query = db_select('filter', 'f');
       $md_query->addField('f', 'status');
@@ -55,13 +57,7 @@ class OpenBlogContentTestCase extends DrupalWebTestCase {
       $this->assertEqual($result->status, 1, t('The block "@module" "@delta" is not enabled.', array('@module' => $module, '@delta' => $delta)));
     }
 
-    // Check variables:
-    // - Make sure the admin theme is installed
-    // - Make sure the logo is set to 0
-    // - Test user settings
-    // - Test the default homepage
-    // - Test allow visitor account creation with administrative approval.
-    // - Test settings for ShareThis
+    // Check variables
     $tests = array(
       'theme_default' => 'subtle_simplicity',
       'admin_theme' => 'seven',
@@ -89,7 +85,8 @@ class OpenBlogContentTestCase extends DrupalWebTestCase {
       'honeypot_time_limit' => '5',
       'date_format_long' => 'l, F j, Y - g:ia',
       'date_format_medium' => 'F j, Y - g:ia',
-      'date_format_short' => 'M j Y - H:i'
+      'date_format_short' => 'M j Y - H:i',
+      'pathauto_node_post_pattern' => 'posts/[node:created:custom:Y]/[node:created:custom:m]/[node:created:custom:d]/[node:title]'
     );
     foreach($tests as $key => $value) {
       $message = t('The variable "@key" is not @value', array('@key' => $key, '@value' => $value));
@@ -98,15 +95,11 @@ class OpenBlogContentTestCase extends DrupalWebTestCase {
     }
 
     $theme_subtle_simplicity_settings = variable_get('theme_subtle_simplicity_settings', array());
-    $toggle_logo = $theme_subtle_simplicity_settings['toggle_logo'];
-    $this->assertEqual($toggle_logo, 0, 'The variable "toggle_logo" is not 0');
+    $this->assertTrue(in_array('toggle_logo', array_keys($theme_subtle_simplicity_settings)), t('The variable "toggle_logo" is not set'));
 
     $sharethis_option_extras = variable_get('sharethis_option_extras', array());
-    $google_plus = $sharethis_option_extras['Google Plus One:plusone'];
-    $this->assertEqual($google_plus, 'Google Plus One:plusone', 'The variable "sharethis_option_extras[\'Google Plus One:plusone\']" is not Google Plus One:plusone');
-
-    $facebook_like = $sharethis_option_extras['Facebook Like:fblike'];
-    $this->assertEqual($facebook_like, 'Facebook Like:fblike', 'The variable "sharethis_option_extras[\'Facebook Like:fblike\']" is not Facebook Like:fblike');
+    $this->assertTrue(in_array('Google Plus One:plusone', array_keys($sharethis_option_extras)), t('The variable "sharethis_option_extras[\'Google Plus One:plusone\']" is not Google Plus One:plusone'));
+    $this->assertTrue(in_array('Facebook Like:fblike', array_keys($sharethis_option_extras)), t('The variable "sharethis_option_extras[\'Facebook Like:fblike\']" is not Facebook Like:fblike'));
 
     // Test permissions
     $roles = array(
@@ -150,8 +143,8 @@ class OpenBlogContentTestCase extends DrupalWebTestCase {
       $role_id = $role_id_query->execute()->fetchObject();
       $this->assertEqual($role_id->name, $role['name'], t('The role name is not @role', array('@role' => $role['name'])));
 
-      // Test and make sure the the default permissions exist in the database
-      // and are assigned to the proper role.
+      // Make sure the the default permissions exist in the database and are 
+      // assigned to the proper role.
       foreach($role['perms'] as $perm) {
         $perm_query = db_select('role_permission', 'r');
         $perm_query->addField('r', 'permission');
@@ -162,36 +155,22 @@ class OpenBlogContentTestCase extends DrupalWebTestCase {
       }
     }
 
-    // Test Admin role
+    // Make sure the administrator role exits.
     $admin_role_query = db_select('role', 'r');
     $admin_role_query->addField('r', 'name');
     $admin_role_query->condition('name', 'administrator');
     $admin_role = $admin_role_query->execute()->fetchObject();
     $this->assertEqual($admin_role->name, 'administrator', t('The administrator role does not exist.'));
-  }
-
-  public function testOpenBlogContentInstallSettings() {
-    $tests = array(
-      'pathauto_node_post_pattern' => 'posts/[node:created:custom:Y]/[node:created:custom:m]/[node:created:custom:d]/[node:title]',
-    );
-    foreach($tests as $key => $value) {
-      $message = t('The variable "@key" is not @value', array('@key' => $key, '@value' => $value));
-      $var = variable_get($key, '');
-      $this->assertEqual($var, $value, $message);
-    }
 
     $node_options_post = variable_get('node_options_post', array());
-    $promote = $node_options_post[0];
-    $this->assertEqual($promote, 'promote', 'The variable "node_options_post" is not 0');
+    $this->assertEqual(in_array('promote', array_keys($node_options_post)), t('The variable "node_options_post" is not set.'));
 
     // Make sure post_tags vocabulary exists
     $names = taxonomy_vocabulary_get_names();
-    $vocab = $names['post_tags'];
-    $this->assertNotNull($vocab, 'the vocabulary post_tags exists');
+    $this->assertTrue(in_array('post_tags', array_keys($names)), 'the vocabulary post_tags exists');
 
     // Make sure image styles exist
     $styles = image_styles();
-
     $installed_styles = array(
       'post-full',
       'post-large-left',
@@ -208,9 +187,11 @@ class OpenBlogContentTestCase extends DrupalWebTestCase {
     // Make sure the views exist
     $views = views_get_all_views();
     $this->assertTrue(in_array('homepage', array_keys($views)), t('The homepage view does not exist.'));
-
   }
 
+  /**
+   * Tests creating content.
+   */
   public function testOpenBlogContentPostCreate() {
     $user = $this->drupalCreateUser(array(
       'bypass node access',
@@ -219,6 +200,7 @@ class OpenBlogContentTestCase extends DrupalWebTestCase {
 
     $this->drupalGet("/");
     $this->assertResponse(200, t('This should work'));
+
     // Create node to edit.
     $edit = array();
     $edit['title'] = $this->randomName(8);
@@ -236,7 +218,11 @@ class OpenBlogContentTestCase extends DrupalWebTestCase {
 
   }
 
-  public function testOpenBlogAuthorPostContent() {
+  /**
+   * Tests the roles.
+   */
+  public function testOpenBlogRolesPostContent() {
+    // Testing the author role
     $author = $this->drupalCreateUser(array(
       'create post content',
       'delete own post content',
@@ -266,6 +252,7 @@ class OpenBlogContentTestCase extends DrupalWebTestCase {
     $edit["body[und][0][value]"] = $this->randomName(64);
     $this->drupalPost('node/1/edit', $edit, t('Save'));
 
+    // Make sure the message is displayed on the page
     $this->assertText(t('Post @title has been updated.', array('@title' => $edit['title'])));
 
     // Make sure that the post is listed on the homepage.
@@ -280,9 +267,9 @@ class OpenBlogContentTestCase extends DrupalWebTestCase {
     $this->assertNoText(t('Comment settings'), 'The text "Comment settings" appears on the Post add page.');
     $this->assertNoText(t('Authoring information'), 'The text "Authoring information" appears on the Post add page.');
     $this->assertNoText(t('Publishing options'), 'The text "Publishing options" appears on the Post add page.');
-  }
+    $this->drupalLogout();
 
-  public function testOpenBlogEditorPostContent() {
+    // Testing the editor role
     $editor = $this->drupalCreateUser(array(
       'bypass node access',
       'administer comments',
@@ -335,6 +322,7 @@ class OpenBlogContentTestCase extends DrupalWebTestCase {
     $this->assertText(t('Comment settings'), 'The text "Comment settings" appears on the Post add page.');
     $this->assertText(t('Authoring information'), 'The text "Authoring information" appears on the Post add page.');
     $this->assertText(t('Publishing options'), 'The text "Publishing options" appears on the Post add page.');
+    $this->drupalLogout();
   }
 }
 
