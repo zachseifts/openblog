@@ -73,8 +73,9 @@ projects[views][subdir] = "contrib"
 projects[boron][version] = "1.3"
 projects[boron][subdir] = "contrib"
 
-projects[subtle_simplicity][version] = "1.2"
-projects[subtle_simplicity][subdir] = "contrib"
+projects[subtle_simplicity][download][type] = "1.2"
+projects[subtle_simplicity][download][url] = "http://git.drupal.org/project/subtle_simplicity.git"
+projects[subtle_simplicity][download][branch] = "7.x-1.x"
 
 ; Libraries
 ; Please fill the following out. Type may be one of get, git, bzr or svn,
