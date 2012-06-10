@@ -273,7 +273,7 @@ function openblog_content_views_default_views() {
   /* Display: Recent posts */
   $handler = $view->new_display('block', 'Recent posts', 'block_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Recent posts';
+  $handler->display->display_options['title'] = 'Recent Posts';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
