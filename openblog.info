@@ -50,6 +50,7 @@ dependencies[] = filefield_sources
 dependencies[] = libraries
 
 dependencies[] = openblog_content
+dependencies[] = openblog_core
 
 files[] = openblog.profile
 files[] = openblog.install

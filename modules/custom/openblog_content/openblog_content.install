@@ -35,3 +35,16 @@ function openblog_content_uninstall() {
   variable_del('pathauto_node_post_pattern');
 }
 
+/**
+ * Installs the openblog_core module and entitycache.
+ */
+function openblog_content_update_7100(&$sandbox) {
+  $modules = array(
+    'openblog_core',
+    'entitycache'
+  );
+  module_enable($modules);
+
+  // Flush all caches
+  drupal_flush_all_caches();
+}
