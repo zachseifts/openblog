@@ -27,7 +27,7 @@ projects[fontyourface][subdir] = "contrib"
 projects[gist_filter][version] = "1.2"
 projects[gist_filter][subdir] = "contrib"
 
-projects[globalredirect][version] = "1.4"
+projects[globalredirect][version] = "1.5"
 projects[globalredirect][subdir] = "contrib"
 
 projects[honeypot][version] = "1.11"
