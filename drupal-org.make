@@ -15,6 +15,9 @@ projects[context][subdir] = "contrib"
 projects[entity][version] = "1.0-rc3"
 projects[entity][subdir] = "contrib"
 
+projects[entitycache][version] = "1.1"
+projects[entitycache][subdir] = "contrib"
+
 projects[features][version] = "1.0-rc3"
 projects[features][subdir] = "contrib"
 

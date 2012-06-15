@@ -27,6 +27,7 @@ dependencies[] = rdf
 dependencies[] = token
 dependencies[] = pathauto
 dependencies[] = entity
+dependencies[] = entitycache
 dependencies[] = ctools
 dependencies[] = views
 dependencies[] = features
