@@ -3,13 +3,13 @@ api = 2
 core = 7.14
 
 ; Modules
-projects[ctools][version] = "1.0"
+projects[ctools][version] = "1.2"
 projects[ctools][subdir] = "contrib"
 
 projects[codefilter][version] = "1.0"
 projects[codefilter][subdir] = "contrib"
 
-projects[context][version] = "3.0-beta3"
+projects[context][version] = "3.0-beta4"
 projects[context][subdir] = "contrib"
 
 projects[entity][version] = "1.0-rc3"
@@ -19,13 +19,13 @@ projects[entitycache][version] = "1.1"
 projects[entitycache][subdir] = "contrib"
 projects[entitycache][patch][] = "http://drupal.org/files/entitycache-testcase-renaming.patch"
 
-projects[features][version] = "1.0-rc3"
+projects[features][version] = "1.0"
 projects[features][subdir] = "contrib"
 
 projects[filefield_sources][version] = "1.4"
 projects[filefield_sources][subdir] = "contrib"
 
-projects[fontyourface][version] = "2.3"
+projects[fontyourface][version] = "2.4"
 projects[fontyourface][subdir] = "contrib"
 
 projects[gist_filter][version] = "1.2"
@@ -46,7 +46,7 @@ projects[libraries][subdir] = "contrib"
 projects[markdown][version] = "1.0"
 projects[markdown][subdir] = "contrib"
 
-projects[pathauto][version] = "1.1"
+projects[pathauto][version] = "1.2"
 projects[pathauto][subdir] = "contrib"
 
 projects[profile2][version] = "1.2"
@@ -64,7 +64,7 @@ projects[role_delegation][subdir] = "contrib"
 projects[sharethis][version] = "2.4"
 projects[sharethis][subdir] = "contrib"
 
-projects[token][version] = "1.1"
+projects[token][version] = "1.2"
 projects[token][subdir] = "contrib"
 
 projects[video_filter][version] = "3.0"
