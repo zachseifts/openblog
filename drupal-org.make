@@ -1,6 +1,6 @@
 api = 2
 
-core = 7.14
+core = 7.16
 
 ; Modules
 projects[ctools][version] = "1.2"
@@ -34,7 +34,7 @@ projects[gist_filter][subdir] = "contrib"
 projects[globalredirect][version] = "1.5"
 projects[globalredirect][subdir] = "contrib"
 
-projects[honeypot][version] = "1.11"
+projects[honeypot][version] = "1.13"
 projects[honeypot][subdir] = "contrib"
 
 projects[insert][version] = "1.1"
@@ -55,22 +55,22 @@ projects[profile2][subdir] = "contrib"
 projects[r4032login][version] = "1.5"
 projects[r4032login][subdir] = "contrib"
 
-projects[redirect][version] = "1.0-beta4"
+projects[redirect][version] = "1.0-rc1"
 projects[redirect][subdir] = "contrib"
 
 projects[role_delegation][version] = "1.1"
 projects[role_delegation][subdir] = "contrib"
 
-projects[sharethis][version] = "2.4"
+projects[sharethis][version] = "2.5"
 projects[sharethis][subdir] = "contrib"
 
-projects[token][version] = "1.2"
+projects[token][version] = "1.4"
 projects[token][subdir] = "contrib"
 
 projects[video_filter][version] = "3.0"
 projects[video_filter][subdir] = "contrib"
 
-projects[views][version] = "3.3"
+projects[views][version] = "3.5"
 projects[views][subdir] = "contrib"
 
 ; Themes
