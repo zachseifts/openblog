@@ -40,6 +40,7 @@ dependencies[] = video_filter
 dependencies[] = role_delegation
 dependencies[] = r4032login
 dependencies[] = fontyourface
+dependencies[] = google_analytics
 dependencies[] = google_fonts_api
 dependencies[] = context
 dependencies[] = honeypot
