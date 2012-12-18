@@ -58,12 +58,3 @@ function openblog_core_update_7101(&$sandbox) {
   }
 }
 
-/**
- * Installs the google_analytics module
- */
-function openblog_core_update_7102(&$sandbox) {
-  if (!module_exists('google_analytics')) {
-    module_enable(array('google_analytics'));
-  }
-}
-

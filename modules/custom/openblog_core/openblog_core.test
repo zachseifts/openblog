@@ -86,14 +86,8 @@ class OpenBlogContentTestCase extends DrupalWebTestCase {
       $this->assertEqual($var, $value, $message);
     }
 
-    // Make sure the some modules are installed
-    $modules = array(
-      'metatag',
-      'google_analytics',
-    );
-    foreach($modules as $module) {
-      $this->assertTrue(module_exists($module));
-    }
+    // Make sure the metatag module is installed.
+    $this->assertTrue(module_exists('metatag'));
 
     $theme_subtle_simplicity_settings = variable_get('theme_subtle_simplicity_settings', array());
     $this->assertTrue(in_array('toggle_logo', array_keys($theme_subtle_simplicity_settings)), t('The variable "toggle_logo" is not set'));
