@@ -67,14 +67,6 @@ class OpenBlogContentTestCase extends DrupalWebTestCase {
       'user_picture_style' => 'thumbnail',
       'site_frontpage' => 'homepage',
       'user_register' => USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL,
-      'sharethis_button_option' => 'stbc_hcount',
-      'sharethis_location' => 'content',
-      'sharethis_node_option' => 'post',
-      'sharethis_service_option' => '"Tweet:twitter","Facebook:facebook","ShareThis:sharethis"',
-      'sharethis_teaser_option' => 0,
-      'sharethis_twitter_suffix' => '',
-      'sharethis_weight' => 10,
-      'sharethis_widget_option' => 'st_multi',
       'honeypot_element_name' => 'homepage',
       'honeypot_form_comment_node_post_form' => 1,
       'honeypot_form_post_node_form' => 0,
@@ -96,10 +88,6 @@ class OpenBlogContentTestCase extends DrupalWebTestCase {
 
     $theme_subtle_simplicity_settings = variable_get('theme_subtle_simplicity_settings', array());
     $this->assertTrue(in_array('toggle_logo', array_keys($theme_subtle_simplicity_settings)), t('The variable "toggle_logo" is not set'));
-
-    $sharethis_option_extras = variable_get('sharethis_option_extras', array());
-    $this->assertTrue(in_array('Google Plus One:plusone', array_keys($sharethis_option_extras)), t('The variable "sharethis_option_extras[\'Google Plus One:plusone\']" is not Google Plus One:plusone'));
-    $this->assertTrue(in_array('Facebook Like:fblike', array_keys($sharethis_option_extras)), t('The variable "sharethis_option_extras[\'Facebook Like:fblike\']" is not Facebook Like:fblike'));
 
     // Test permissions
     $roles = array(
