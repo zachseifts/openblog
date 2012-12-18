@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * Disables and uninstalls sharethis module
+ */
+function openblog_core_update_7100(&$sandbox) {
+  // Disable sharethis
+  $modules = array('sharethis');
+  if (module_exists($modules[0])) {
+    module_disable($modules);
+    drupal_uninstall_modules($modules);
+  }
+}
+

@@ -37,7 +37,6 @@ dependencies[] = codefilter
 dependencies[] = gist_filter
 dependencies[] = video_filter
 dependencies[] = role_delegation
-dependencies[] = sharethis
 dependencies[] = r4032login
 dependencies[] = fontyourface
 dependencies[] = google_fonts_api
