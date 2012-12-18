@@ -46,6 +46,9 @@ projects[libraries][subdir] = "contrib"
 projects[markdown][version] = "1.1"
 projects[markdown][subdir] = "contrib"
 
+projects[metatag][version] = "1.0-beta4"
+projects[metatag][subdir] = "contrib"
+
 projects[pathauto][version] = "1.2"
 projects[pathauto][subdir] = "contrib"
 

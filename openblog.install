@@ -213,5 +213,39 @@ function openblog_install() {
   variable_set('date_format_medium', 'F j, Y - g:ia');
   variable_set('date_format_short', 'M j Y - H:i');
 
+  // Setup the metatag module
+  $configs = array(
+    'global' => array(
+      'title' => array('value' => '[current-page:page-title] | [site:name]'),
+      'copyright' => array('value' => '[current-date:custom:Y] [site:name]'),
+      'canonical' => array('value' => '[current-page:url:absolute]'),
+      'shortlink' => array('value' => '[current-page:url:unaliased]'),
+      'dcterms.title' => array('value' => '[current-page:title]'),
+      'dcterms.type' => array('value' => 'Text'),
+      'dcterms.format' => array('value' => 'text/html'),
+      'og:site_name' => array('value' => '[current-page:title]'),
+      'og:title' => array('value' => '[current-page:title]'),
+      'og:type' => array('value' => 'article'),
+      'og:url' => array('value' => '[current-page:url:absolute]'),
+    ),
+    'global:frontpage' => array(
+      'title' => array('value' => '[site:name]'),
+      'copyright' => array('value' => '[current-date:custom:Y] [site:name]'),
+      'canonical' => array('value' => '[current-page:url:absolute]'),
+      'shortlink' => array('value' => '[current-page:url:unaliased]'),
+      'dcterms.title' => array('value' => '[current-page:title]'),
+      'dcterms.type' => array('value' => 'Text'),
+      'dcterms.format' => array('value' => 'text/html'),
+      'og:site_name' => array('value' => '[current-page:title]'),
+      'og:title' => array('value' => '[current-page:title]'),
+      'og:type' => array('value' => 'article'),
+      'og:url' => array('value' => '[current-page:url:absolute]'),
+    ),
+  );
+  foreach ($configs as $instance => $config) {
+    db_insert('metatag_config')
+      ->fields(array('instance' => $instance, 'config' => serialize($config)))
+      ->execute();
+  }
 }
 

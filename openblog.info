@@ -33,6 +33,7 @@ dependencies[] = views
 dependencies[] = features
 dependencies[] = profile2
 dependencies[] = markdown
+dependencies[] = metatag
 dependencies[] = codefilter
 dependencies[] = gist_filter
 dependencies[] = video_filter

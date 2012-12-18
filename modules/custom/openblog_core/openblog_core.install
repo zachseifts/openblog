@@ -12,3 +12,49 @@ function openblog_core_update_7100(&$sandbox) {
   }
 }
 
+/**
+ * Enables and configures the metatags module
+ */
+function openblog_core_update_7101(&$sandbox) {
+  if (!module_exists('metatag')) {
+
+    // Enable the metatag module
+    module_enable(array('metatag'));
+
+    // Setup the metatag module
+    $configs = array(
+      'global' => array(
+        'title' => array('value' => '[current-page:page-title] | [site:name]'),
+        'copyright' => array('value' => '[current-date:custom:Y] [site:name]'),
+        'canonical' => array('value' => '[current-page:url:absolute]'),
+        'shortlink' => array('value' => '[current-page:url:unaliased]'),
+        'dcterms.title' => array('value' => '[current-page:title]'),
+        'dcterms.type' => array('value' => 'Text'),
+        'dcterms.format' => array('value' => 'text/html'),
+        'og:site_name' => array('value' => '[current-page:title]'),
+        'og:title' => array('value' => '[current-page:title]'),
+        'og:type' => array('value' => 'article'),
+        'og:url' => array('value' => '[current-page:url:absolute]'),
+      ),
+      'global:frontpage' => array(
+        'title' => array('value' => '[site:name]'),
+        'copyright' => array('value' => '[current-date:custom:Y] [site:name]'),
+        'canonical' => array('value' => '[current-page:url:absolute]'),
+        'shortlink' => array('value' => '[current-page:url:unaliased]'),
+        'dcterms.title' => array('value' => '[current-page:title]'),
+        'dcterms.type' => array('value' => 'Text'),
+        'dcterms.format' => array('value' => 'text/html'),
+        'og:site_name' => array('value' => '[current-page:title]'),
+        'og:title' => array('value' => '[current-page:title]'),
+        'og:type' => array('value' => 'article'),
+        'og:url' => array('value' => '[current-page:url:absolute]'),
+      ),
+    );
+    foreach ($configs as $instance => $config) {
+      db_insert('metatag_config')
+        ->fields(array('instance' => $instance, 'config' => serialize($config)))
+        ->execute();
+    }
+  }
+}
+
