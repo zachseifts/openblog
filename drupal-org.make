@@ -9,7 +9,7 @@ projects[ctools][subdir] = "contrib"
 projects[codefilter][version] = "1.0"
 projects[codefilter][subdir] = "contrib"
 
-projects[context][version] = "3.0-beta4"
+projects[context][version] = "3.0-beta5"
 projects[context][subdir] = "contrib"
 
 projects[entity][version] = "1.0-rc3"
@@ -22,7 +22,7 @@ projects[entitycache][patch][] = "http://drupal.org/files/entitycache-testcase-r
 projects[features][version] = "1.0"
 projects[features][subdir] = "contrib"
 
-projects[filefield_sources][version] = "1.4"
+projects[filefield_sources][version] = "1.7"
 projects[filefield_sources][subdir] = "contrib"
 
 projects[fontyourface][version] = "2.4"
@@ -37,13 +37,13 @@ projects[globalredirect][subdir] = "contrib"
 projects[honeypot][version] = "1.13"
 projects[honeypot][subdir] = "contrib"
 
-projects[insert][version] = "1.1"
+projects[insert][version] = "1.2"
 projects[insert][subdir] = "contrib"
 
 projects[libraries][version] = "1.0"
 projects[libraries][subdir] = "contrib"
 
-projects[markdown][version] = "1.0"
+projects[markdown][version] = "1.1"
 projects[markdown][subdir] = "contrib"
 
 projects[pathauto][version] = "1.2"
@@ -67,7 +67,7 @@ projects[sharethis][subdir] = "contrib"
 projects[token][version] = "1.4"
 projects[token][subdir] = "contrib"
 
-projects[video_filter][version] = "3.0"
+projects[video_filter][version] = "3.1"
 projects[video_filter][subdir] = "contrib"
 
 projects[views][version] = "3.5"
