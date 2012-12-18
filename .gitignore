@@ -1,4 +1,5 @@
 *.swp
+*.sql
 libraries/
 themes/contrib
 modules/contrib
