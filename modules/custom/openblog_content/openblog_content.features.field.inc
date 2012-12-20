@@ -10,7 +10,7 @@
 function openblog_content_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-post-body'
+  // Exported field: 'node-post-body'.
   $fields['node-post-body'] = array(
     'field_config' => array(
       'active' => '1',
@@ -33,6 +33,7 @@ function openblog_content_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -83,7 +84,7 @@ function openblog_content_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-post-field_image_file'
+  // Exported field: 'node-post-field_image_file'.
   $fields['node-post-field_image_file'] = array(
     'field_config' => array(
       'active' => '1',
@@ -104,6 +105,7 @@ function openblog_content_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'image',
       'settings' => array(
         'default_image' => 0,
@@ -166,6 +168,7 @@ function openblog_content_field_default_fields() {
             ),
           ),
           'insert' => 1,
+          'insert_absolute' => FALSE,
           'insert_class' => '',
           'insert_default' => 'image_post-medium-left',
           'insert_styles' => array(
@@ -197,7 +200,7 @@ function openblog_content_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-post-field_tags'
+  // Exported field: 'node-post-field_tags'.
   $fields['node-post-field_tags'] = array(
     'field_config' => array(
       'active' => '1',
@@ -218,6 +221,7 @@ function openblog_content_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(

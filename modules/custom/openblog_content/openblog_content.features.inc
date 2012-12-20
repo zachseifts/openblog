@@ -27,7 +27,7 @@ function openblog_content_views_api() {
 function openblog_content_image_default_styles() {
   $styles = array();
 
-  // Exported image style: post-full
+  // Exported image style: post-full.
   $styles['post-full'] = array(
     'name' => 'post-full',
     'effects' => array(
@@ -50,7 +50,7 @@ function openblog_content_image_default_styles() {
     ),
   );
 
-  // Exported image style: post-large-left
+  // Exported image style: post-large-left.
   $styles['post-large-left'] = array(
     'name' => 'post-large-left',
     'effects' => array(
@@ -73,7 +73,7 @@ function openblog_content_image_default_styles() {
     ),
   );
 
-  // Exported image style: post-large-right
+  // Exported image style: post-large-right.
   $styles['post-large-right'] = array(
     'name' => 'post-large-right',
     'effects' => array(
@@ -96,7 +96,7 @@ function openblog_content_image_default_styles() {
     ),
   );
 
-  // Exported image style: post-medium-left
+  // Exported image style: post-medium-left.
   $styles['post-medium-left'] = array(
     'name' => 'post-medium-left',
     'effects' => array(
@@ -119,7 +119,7 @@ function openblog_content_image_default_styles() {
     ),
   );
 
-  // Exported image style: post-medium-right
+  // Exported image style: post-medium-right.
   $styles['post-medium-right'] = array(
     'name' => 'post-medium-right',
     'effects' => array(
@@ -142,7 +142,7 @@ function openblog_content_image_default_styles() {
     ),
   );
 
-  // Exported image style: post-thumb-left
+  // Exported image style: post-thumb-left.
   $styles['post-thumb-left'] = array(
     'name' => 'post-thumb-left',
     'effects' => array(
@@ -165,7 +165,7 @@ function openblog_content_image_default_styles() {
     ),
   );
 
-  // Exported image style: post-thumb-right
+  // Exported image style: post-thumb-right.
   $styles['post-thumb-right'] = array(
     'name' => 'post-thumb-right',
     'effects' => array(
