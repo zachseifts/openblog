@@ -80,20 +80,12 @@ projects[views][version] = "3.5"
 projects[views][subdir] = "contrib"
 
 ; Themes
-projects[boron][version] = "1.3"
-projects[boron][subdir] = "contrib"
+projects[omega][version] = "3.1"
+projects[omega][subdir] = "contrib"
 
 projects[subtle_simplicity][type] = "theme"
 projects[subtle_simplicity][subdir] = "contrib"
 projects[subtle_simplicity][download][type] = "git"
 projects[subtle_simplicity][download][url] = "http://git.drupal.org/project/subtle_simplicity.git"
-projects[subtle_simplicity][download][branch] = "7.x-1.x"
-
-; Libraries
-; Please fill the following out. Type may be one of get, git, bzr or svn,
-; and url is the url of the download.
-libraries[1140_cssgrid][download][type] = "get"
-libraries[1140_cssgrid][download][url] = "http://download.cssgrid.net/1140_CssGrid_2.zip"
-libraries[1140_cssgrid][directory_name] = "1140_cssgrid"
-libraries[1140_cssgrid][type] = "library"
+projects[subtle_simplicity][download][branch] = "7.x-2.x"
 
