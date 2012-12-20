@@ -9,7 +9,7 @@ projects[ctools][subdir] = "contrib"
 projects[codefilter][version] = "1.0"
 projects[codefilter][subdir] = "contrib"
 
-projects[context][version] = "3.0-beta5"
+projects[context][version] = "3.0-beta6"
 projects[context][subdir] = "contrib"
 
 projects[entity][version] = "1.0-rc3"
