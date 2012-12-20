@@ -211,7 +211,6 @@ function openblog_content_views_default_views() {
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   /* Contextual filter: Content: Created year + month */
   $handler->display->display_options['arguments']['created_year_month']['id'] = 'created_year_month';
   $handler->display->display_options['arguments']['created_year_month']['table'] = 'node';
