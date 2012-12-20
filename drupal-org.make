@@ -19,6 +19,9 @@ projects[entitycache][version] = "1.1"
 projects[entitycache][subdir] = "contrib"
 projects[entitycache][patch][] = "http://drupal.org/files/entitycache-testcase-renaming.patch"
 
+projects[diff][version] = "3.2"
+projects[diff][subdir] = "contrib"
+
 projects[features][version] = "1.0"
 projects[features][subdir] = "contrib"
 

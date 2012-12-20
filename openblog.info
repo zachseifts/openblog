@@ -28,6 +28,7 @@ dependencies[] = token
 dependencies[] = pathauto
 dependencies[] = entity
 dependencies[] = entitycache
+dependencies[] = diff
 dependencies[] = ctools
 dependencies[] = views
 dependencies[] = features
