@@ -12,7 +12,7 @@ projects[codefilter][subdir] = "contrib"
 projects[context][version] = "3.0-beta6"
 projects[context][subdir] = "contrib"
 
-projects[entity][version] = "1.0-rc3"
+projects[entity][version] = "1.0"
 projects[entity][subdir] = "contrib"
 
 projects[entitycache][version] = "1.1"
@@ -58,7 +58,7 @@ projects[metatag][subdir] = "contrib"
 projects[pathauto][version] = "1.2"
 projects[pathauto][subdir] = "contrib"
 
-projects[profile2][version] = "1.2"
+projects[profile2][version] = "1.3"
 projects[profile2][subdir] = "contrib"
 
 projects[r4032login][version] = "1.5"
