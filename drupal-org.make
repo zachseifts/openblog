@@ -1,6 +1,6 @@
 api = 2
 
-core = 7.19
+core = 7.x
 
 ; Modules
 projects[ctools][version] = "1.2"
