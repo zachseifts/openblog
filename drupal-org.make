@@ -28,7 +28,7 @@ projects[features][subdir] = "contrib"
 projects[filefield_sources][version] = "1.7"
 projects[filefield_sources][subdir] = "contrib"
 
-projects[fontyourface][version] = "2.6"
+projects[fontyourface][version] = "2.7"
 projects[fontyourface][subdir] = "contrib"
 
 projects[gist_filter][version] = "1.2"
@@ -43,7 +43,7 @@ projects[google_analytics][subdir] = "contrib"
 projects[honeypot][version] = "1.14"
 projects[honeypot][subdir] = "contrib"
 
-projects[insert][version] = "1.2"
+projects[insert][version] = "1.3"
 projects[insert][subdir] = "contrib"
 
 projects[libraries][version] = "1.0"
@@ -73,7 +73,7 @@ projects[role_delegation][subdir] = "contrib"
 projects[sharethis][version] = "2.5"
 projects[sharethis][subdir] = "contrib"
 
-projects[token][version] = "1.4"
+projects[token][version] = "1.5"
 projects[token][subdir] = "contrib"
 
 projects[video_filter][version] = "3.1"
