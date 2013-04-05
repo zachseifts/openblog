@@ -3,7 +3,7 @@ api = 2
 core = 7.x
 
 ; Modules
-projects[ctools][version] = "1.2"
+projects[ctools][version] = "1.3"
 projects[ctools][subdir] = "contrib"
 
 projects[codefilter][version] = "1.0"
