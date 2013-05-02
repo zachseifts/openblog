@@ -79,7 +79,7 @@ projects[token][subdir] = "contrib"
 projects[video_filter][version] = "3.1"
 projects[video_filter][subdir] = "contrib"
 
-projects[views][version] = "3.6"
+projects[views][version] = "3.7"
 projects[views][subdir] = "contrib"
 
 ; Themes
