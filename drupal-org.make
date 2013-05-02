@@ -25,7 +25,7 @@ projects[diff][subdir] = "contrib"
 projects[features][version] = "1.0"
 projects[features][subdir] = "contrib"
 
-projects[filefield_sources][version] = "1.7"
+projects[filefield_sources][version] = "1.8"
 projects[filefield_sources][subdir] = "contrib"
 
 projects[fontyourface][version] = "2.8"
