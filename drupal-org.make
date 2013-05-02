@@ -12,7 +12,7 @@ projects[codefilter][subdir] = "contrib"
 projects[context][version] = "3.0-beta6"
 projects[context][subdir] = "contrib"
 
-projects[entity][version] = "1.0"
+projects[entity][version] = "1.1"
 projects[entity][subdir] = "contrib"
 
 projects[entitycache][version] = "1.1"
