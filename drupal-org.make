@@ -52,7 +52,7 @@ projects[libraries][subdir] = "contrib"
 projects[markdown][version] = "1.1"
 projects[markdown][subdir] = "contrib"
 
-projects[metatag][version] = "1.0-beta5"
+projects[metatag][version] = "1.0-beta7"
 projects[metatag][subdir] = "contrib"
 
 projects[pathauto][version] = "1.2"
