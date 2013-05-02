@@ -28,7 +28,7 @@ projects[features][subdir] = "contrib"
 projects[filefield_sources][version] = "1.7"
 projects[filefield_sources][subdir] = "contrib"
 
-projects[fontyourface][version] = "2.7"
+projects[fontyourface][version] = "2.8"
 projects[fontyourface][subdir] = "contrib"
 
 projects[gist_filter][version] = "1.2"
